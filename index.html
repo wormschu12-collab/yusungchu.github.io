@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yusung Chu | Medical AI Researcher</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #222222;
+      --muted: #666666;
+      --line: #e5e7eb;
+      --accent: #2563eb;
+      --soft: #f8fafc;
+      --max-width: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .topbar {
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,0.96);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+    }
+
+    .brand {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .links {
+      display: flex;
+      gap: 24px;
+      font-size: 0.95rem;
+    }
+
+    .links a { color: var(--text); }
+
+    .wrap {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 52px;
+      padding: 42px 24px 72px;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 86px;
+      align-self: start;
+    }
+
+    .photo {
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin-bottom: 20px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+    }
+
+    .name {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 0 0 6px;
+    }
+
+    .role {
+      margin: 0 0 16px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .side-list {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .side-list li { margin-bottom: 9px; }
+
+    h1 {
+      font-size: 1.85rem;
+      margin: 0 0 12px;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      margin: 38px 0 14px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      margin: 22px 0 8px;
+    }
+
+    p { margin: 0 0 15px; }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #333333;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      font-size: 0.86rem;
+      color: #374151;
+    }
+
+    .news, .pubs, .cv-list {
+      padding-left: 1.1rem;
+      margin-top: 10px;
+    }
+
+    .news li, .pubs li, .cv-list li { margin-bottom: 10px; }
+
+    .pub-title { font-weight: 600; }
+
+    .venue { color: var(--muted); }
+
+    .note {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-top: 18px;
+      color: #374151;
+    }
+
+    footer {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 32px 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 820px) {
+      .nav { align-items: flex-start; gap: 12px; flex-direction: column; }
+      .links { flex-wrap: wrap; gap: 14px; }
+      .wrap { grid-template-columns: 1fr; gap: 28px; }
+      .sidebar { position: static; }
+      .photo { width: 150px; height: 150px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav">
+      <a class="brand" href="#home">Yusung Chu</a>
+      <div class="links">
+        <a href="#bio">Bio</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="wrap" id="home">
+    <aside class="sidebar">
+      <img class="photo" src="profile.jpg" alt="Yusung Chu profile photo" />
+      <h2 class="name">Yusung Chu</h2>
+      <p class="role">Postdoctoral Researcher<br />Precision Medicine<br />Yonsei University Wonju College of Medicine</p>
+      <ul class="side-list">
+        <li>Medical Imaging AI</li>
+        <li>Dermatology AI</li>
+        <li>Robust & Fair AI</li>
+        <li>Multimodal / Generative Models</li>
+      </ul>
+      <ul class="side-list" id="contact">
+        <li>Email: <a href="mailto:dbtjd9968@yonsei.ac.kr">dbtjd9968@yonsei.ac.kr</a></li>
+        <li><a href="https://scholar.google.co.kr/" target="_blank" rel="noreferrer">Google Scholar</a></li>
+      </ul>
+    </aside>
+
+    <section>
+      <h1>Yusung Chu</h1>
+      <p class="lead">I am a medical AI researcher developing clinically meaningful, robust, and interpretable models for medical image analysis, with a particular focus on dermatology and skin lesion imaging.</p>
+      <p>My research focuses on diagnostic support systems, multimodal medical image analysis, explainable AI, and generative models for improving data diversity and model robustness in clinical settings.</p>
+
+      <div class="tag-row">
+        <span class="tag">Medical AI</span>
+        <span class="tag">Skin Lesion Imaging</span>
+        <span class="tag">Deep Learning</span>
+        <span class="tag">Explainable AI</span>
+        <span class="tag">Generative Models</span>
+      </div>
+
+      <section id="bio">
+        <h2>Biography</h2>
+        <p>I received my B.S. and Ph.D. in Biomedical Engineering from Yonsei University. Since September 2024, I have been working as a postdoctoral researcher in Precision Medicine at Yonsei University Wonju College of Medicine.</p>
+        <p>My work aims to bridge medical imaging, machine learning, and clinical decision support, especially for dermatology applications such as melanoma prediction, skin lesion analysis, and trustworthy AI systems.</p>
+      </section>
+
+      <section id="research">
+        <h2>Research Interests</h2>
+        <ul class="cv-list">
+          <li>Deep learning-based diagnostic support systems for dermatology</li>
+          <li>Multimodal medical image analysis using clinical and dermoscopic images</li>
+          <li>Robust and fair medical AI across diverse data conditions</li>
+          <li>Explainable AI and clinically interpretable visual concepts</li>
+          <li>Generative models for medical image synthesis and augmentation</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Recent News</h2>
+        <ul class="news">
+          <li><strong>May 2026.</strong> Visiting Scholar period at University of North Carolina at Chapel Hill begins.</li>
+          <li><strong>2025.</strong> Paper on robust melanoma prediction published in IEEE Journal of Biomedical and Health Informatics.</li>
+          <li><strong>Sep 2024.</strong> Started as a postdoctoral researcher at Yonsei University Wonju College of Medicine.</li>
+          <li><strong>2024.</strong> Received Yonsei University Graduate School Best Academic Paper Award.</li>
+        </ul>
+      </section>
+
+      <section id="publications">
+        <h2>Selected Publications</h2>
+        <h3>2025</h3>
+        <ol class="pubs">
+          <li><span class="pub-title">Class-Agnostic Feature-Learning-Based Deep-Learning Model for Robust Melanoma Prediction.</span><br />Yusung Chu, Solam Lee, Byungho Oh, and Sejung Yang. <span class="venue">IEEE Journal of Biomedical and Health Informatics</span>, 2025.</li>
+          <li><span class="pub-title">Deep Learning Algorithms for Assessment of Post-Thyroidectomy Scar Subtype.</span><br />Yusung Chu*, Seung-Won Jung*, Solam Lee, et al. <span class="venue">Dermatologic Therapy</span>, 2025.</li>
+        </ol>
+
+        <h3>2024</h3>
+        <ol class="pubs">
+          <li><span class="pub-title">Full automation of point defect detection in transition metal dichalcogenides through dual mode deep learning algorithm.</span><br />Dong-Hwan Yang*, Yu-Seong Chu*, et al. <span class="venue">Materials Horizons</span>, 2024.</li>
+        </ol>
+
+        <h3>2022</h3>
+        <ol class="pubs">
+          <li><span class="pub-title">Deep Learning Algorithms for Predicting Breslow Thickness from Dermoscopic Images of Acral Lentiginous Melanomas.</span><br />Chu YS*, Lee S*, Lee SG, et al. <span class="venue">Journal of Investigative Dermatology</span>, 2022.</li>
+        </ol>
+
+        <h3>2020</h3>
+        <ol class="pubs">
+          <li><span class="pub-title">Augmented decision-making for acral lentiginous melanoma detection using deep convolutional neural networks.</span><br />Lee S, Chu YS, Yoo SK, et al. <span class="venue">Journal of the European Academy of Dermatology and Venereology</span>, 2020.</li>
+          <li><span class="pub-title">Artificial Intelligence in Cutaneous Oncology.</span><br />Chu YS, An HG, Oh BH, Yang S. <span class="venue">Frontiers in Medicine</span>, 2020.</li>
+        </ol>
+      </section>
+
+      <section id="cv">
+        <h2>CV</h2>
+        <h3>Education</h3>
+        <ul class="cv-list">
+          <li>Ph.D., Biomedical Engineering, Yonsei University, Korea, 2019–2024</li>
+          <li>B.S., Biomedical Engineering, Yonsei University, Korea, 2014–2020</li>
+        </ul>
+
+        <h3>Professional Experience</h3>
+        <ul class="cv-list">
+          <li>Postdoctoral Researcher, Precision Medicine, Yonsei University Wonju College of Medicine, Korea, 2024–Present</li>
+        </ul>
+
+        <h3>Patents & Awards</h3>
+        <ul class="cv-list">
+          <li>Yonsei University Graduate School Best Academic Paper Award, 2024</li>
+          <li>Korea Society of Digital Health Grand Award, 2023</li>
+          <li>Registered patents related to melanoma diagnosis and atomic image analysis</li>
+        </ul>
+
+        <div class="note">Tip: replace <code>profile.jpg</code> with your real profile image, then upload this file as <code>index.html</code> to a GitHub repository named <code>your-github-id.github.io</code>.</div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Yusung Chu. Powered by GitHub Pages.
+  </footer>
+</body>
+</html>
