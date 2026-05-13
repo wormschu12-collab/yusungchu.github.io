@@ -12,7 +12,7 @@
       --line: #e5e7eb;
       --accent: #2563eb;
       --soft: #f8fafc;
-      --max-width: 1120px;
+      --max-width: 1160px;
     }
 
     * { box-sizing: border-box; }
@@ -46,19 +46,22 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 24px;
+      padding: 15px 24px;
     }
 
     .brand {
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       font-weight: 700;
       color: var(--text);
+      white-space: nowrap;
     }
 
     .links {
       display: flex;
-      gap: 24px;
-      font-size: 0.95rem;
+      gap: 18px;
+      font-size: 0.94rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     .links a { color: var(--text); }
@@ -67,7 +70,7 @@
       max-width: var(--max-width);
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 280px 1fr;
+      grid-template-columns: 285px 1fr;
       gap: 52px;
       padding: 42px 24px 72px;
     }
@@ -79,8 +82,8 @@
     }
 
     .photo {
-      width: 190px;
-      height: 190px;
+      width: 188px;
+      height: 188px;
       border-radius: 50%;
       object-fit: cover;
       display: block;
@@ -93,6 +96,8 @@
       font-size: 1.45rem;
       font-weight: 700;
       margin: 0 0 6px;
+      border: 0;
+      padding: 0;
     }
 
     .role {
@@ -112,20 +117,20 @@
     .side-list li { margin-bottom: 9px; }
 
     h1 {
-      font-size: 1.85rem;
+      font-size: 1.9rem;
       margin: 0 0 12px;
     }
 
     h2 {
       font-size: 1.35rem;
-      margin: 38px 0 14px;
+      margin: 40px 0 15px;
       padding-bottom: 6px;
       border-bottom: 1px solid var(--line);
     }
 
     h3 {
       font-size: 1.05rem;
-      margin: 22px 0 8px;
+      margin: 24px 0 8px;
     }
 
     p { margin: 0 0 15px; }
@@ -151,24 +156,52 @@
       color: #374151;
     }
 
-    .news, .pubs, .cv-list {
+    .list {
       padding-left: 1.1rem;
       margin-top: 10px;
     }
 
-    .news li, .pubs li, .cv-list li { margin-bottom: 10px; }
+    .list li { margin-bottom: 10px; }
+
+    .pubs {
+      padding-left: 1.2rem;
+      margin-top: 10px;
+    }
+
+    .pubs li { margin-bottom: 13px; }
 
     .pub-title { font-weight: 600; }
 
     .venue { color: var(--muted); }
 
-    .note {
-      background: var(--soft);
+    .meta { color: var(--muted); font-size: 0.94rem; }
+
+    .grid-two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .card {
       border: 1px solid var(--line);
-      border-radius: 12px;
+      border-radius: 14px;
+      background: var(--soft);
       padding: 16px 18px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .note {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-radius: 12px;
+      padding: 14px 16px;
       margin-top: 18px;
-      color: #374151;
+      color: #7c2d12;
+      font-size: 0.94rem;
     }
 
     footer {
@@ -180,12 +213,13 @@
       font-size: 0.9rem;
     }
 
-    @media (max-width: 820px) {
+    @media (max-width: 860px) {
       .nav { align-items: flex-start; gap: 12px; flex-direction: column; }
-      .links { flex-wrap: wrap; gap: 14px; }
+      .links { justify-content: flex-start; gap: 14px; }
       .wrap { grid-template-columns: 1fr; gap: 28px; }
       .sidebar { position: static; }
       .photo { width: 150px; height: 150px; }
+      .grid-two { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -197,8 +231,10 @@
         <a href="#bio">Bio</a>
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
-        <a href="#cv">CV</a>
-        <a href="#contact">Contact</a>
+        <a href="#profile">Academic Profile</a>
+        <a href="#grants">Grants</a>
+        <a href="#honors">Honors</a>
+        <a href="#patents">Patents</a>
       </div>
     </nav>
   </header>
@@ -212,11 +248,13 @@
         <li>Medical Imaging AI</li>
         <li>Dermatology AI</li>
         <li>Robust & Fair AI</li>
-        <li>Multimodal / Generative Models</li>
+        <li>Explainable AI</li>
+        <li>Generative Models</li>
       </ul>
       <ul class="side-list" id="contact">
         <li>Email: <a href="mailto:dbtjd9968@yonsei.ac.kr">dbtjd9968@yonsei.ac.kr</a></li>
-        <li><a href="https://scholar.google.co.kr/" target="_blank" rel="noreferrer">Google Scholar</a></li>
+        <li><a href="https://scholar.google.com/scholar?q=Yusung+Chu" target="_blank" rel="noreferrer">Google Scholar</a></li>
+        <li><a href="CV_Yusung_Chu.pdf" target="_blank" rel="noreferrer">Download CV</a></li>
       </ul>
     </aside>
 
@@ -230,88 +268,113 @@
         <span class="tag">Skin Lesion Imaging</span>
         <span class="tag">Deep Learning</span>
         <span class="tag">Explainable AI</span>
-        <span class="tag">Generative Models</span>
+        <span class="tag">Foundation Models</span>
+        <span class="tag">Generative AI</span>
       </div>
 
       <section id="bio">
         <h2>Biography</h2>
         <p>I received my B.S. and Ph.D. in Biomedical Engineering from Yonsei University. Since September 2024, I have been working as a postdoctoral researcher in Precision Medicine at Yonsei University Wonju College of Medicine.</p>
-        <p>My work aims to bridge medical imaging, machine learning, and clinical decision support, especially for dermatology applications such as melanoma prediction, skin lesion analysis, and trustworthy AI systems.</p>
+        <p>I am scheduled to visit the Department of Psychiatry at the University of North Carolina at Chapel Hill School of Medicine as a visiting scholar from May 2026 to September 2026.</p>
       </section>
 
       <section id="research">
         <h2>Research Interests</h2>
-        <ul class="cv-list">
+        <ul class="list">
           <li>Deep learning-based diagnostic support systems for dermatology</li>
-          <li>Multimodal medical image analysis using clinical and dermoscopic images</li>
+          <li>Medical augmented intelligence for clinical decision support</li>
+          <li>Explainable AI and visual concept-based interpretation</li>
           <li>Robust and fair medical AI across diverse data conditions</li>
-          <li>Explainable AI and clinically interpretable visual concepts</li>
-          <li>Generative models for medical image synthesis and augmentation</li>
+          <li>Generative AI and foundation models for medical imaging</li>
         </ul>
       </section>
 
       <section>
         <h2>Recent News</h2>
-        <ul class="news">
-          <li><strong>May 2026.</strong> Visiting Scholar period at University of North Carolina at Chapel Hill begins.</li>
-          <li><strong>2025.</strong> Paper on robust melanoma prediction published in IEEE Journal of Biomedical and Health Informatics.</li>
-          <li><strong>Sep 2024.</strong> Started as a postdoctoral researcher at Yonsei University Wonju College of Medicine.</li>
-          <li><strong>2024.</strong> Received Yonsei University Graduate School Best Academic Paper Award.</li>
+        <ul class="list">
+          <li><strong>2026.</strong> Paper on AI-assisted diagnosis of nail unit melanoma and melanonychia accepted in <em>Journal der Deutschen Dermatologischen Gesellschaft</em>.</li>
+          <li><strong>2026.</strong> Postdoctoral Research Fellowship from the National Research Foundation of Korea, Principal Investigator.</li>
+          <li><strong>2025.</strong> Paper on robust melanoma prediction published in <em>IEEE Journal of Biomedical and Health Informatics</em>.</li>
+          <li><strong>2025.</strong> MICCAI Workshop paper received Best Poster Presentation Award.</li>
         </ul>
       </section>
 
       <section id="publications">
         <h2>Selected Publications</h2>
-        <h3>2025</h3>
         <ol class="pubs">
+          <li><span class="pub-title">Artificial Intelligence–Assisted Diagnosis of Nail Unit Melanoma vs Melanonychia Using Clinical Images: A Deep Learning Model With Human Validation.</span><br />Yusung Chu, Sejung Yang, and Byungho Oh. <span class="venue">Journal der Deutschen Dermatologischen Gesellschaft</span>, 2026. <span class="meta">Accepted.</span></li>
           <li><span class="pub-title">Class-Agnostic Feature-Learning-Based Deep-Learning Model for Robust Melanoma Prediction.</span><br />Yusung Chu, Solam Lee, Byungho Oh, and Sejung Yang. <span class="venue">IEEE Journal of Biomedical and Health Informatics</span>, 2025.</li>
           <li><span class="pub-title">Deep Learning Algorithms for Assessment of Post-Thyroidectomy Scar Subtype.</span><br />Yusung Chu*, Seung-Won Jung*, Solam Lee, et al. <span class="venue">Dermatologic Therapy</span>, 2025.</li>
+          <li><span class="pub-title">Deep Learning Algorithms for Predicting Breslow Thickness from Dermoscopic Images of Acral Lentiginous Melanomas.</span><br />Yusung Chu*, Solam Lee*, Sang Gyun Lee, et al. <span class="venue">Journal of Investigative Dermatology</span>, 2022.</li>
+          <li><span class="pub-title">Augmented decision-making for acral lentiginous melanoma detection using deep convolutional neural networks.</span><br />Solam Lee, Yusung Chu, et al. <span class="venue">Journal of the European Academy of Dermatology and Venereology</span>, 2020.</li>
+          <li><span class="pub-title">Artificial Intelligence in Cutaneous Oncology.</span><br />Yusung Chu, Hyung Geun An, Byungho Oh, and Sejung Yang. <span class="venue">Frontiers in Medicine</span>, 2020.</li>
         </ol>
 
-        <h3>2024</h3>
+        <h3>Submitted / Under Review</h3>
         <ol class="pubs">
-          <li><span class="pub-title">Full automation of point defect detection in transition metal dichalcogenides through dual mode deep learning algorithm.</span><br />Dong-Hwan Yang*, Yu-Seong Chu*, et al. <span class="venue">Materials Horizons</span>, 2024.</li>
+          <li><span class="pub-title">Generative AI translation of frozen section into FFPE-like images for skin cancer resection margins.</span><br />Sang-Hoon Lee*, Yu-Sung Chu*, et al. <span class="venue">npj Digital Medicine</span>. <span class="meta">In revision.</span></li>
+          <li><span class="pub-title">DIST: Training-Free Dermoscopic Image Skin Tone Style Transfer with Lesion Preservation.</span><br />Yusung Chu, Byungho Oh, and Sejung Yang. <span class="venue">IEEE Journal of Biomedical and Health Informatics</span>. <span class="meta">Under review.</span></li>
+          <li><span class="pub-title">High-Resolution CAM-Guided Weakly Supervised Skin Lesion Segmentation using FeatUp and SAM.</span><br />Yusung Chu and Sejung Yang. <span class="venue">Scientific Reports</span>. <span class="meta">Submitted.</span></li>
         </ol>
 
-        <h3>2022</h3>
+        <h3>Conference Papers</h3>
         <ol class="pubs">
-          <li><span class="pub-title">Deep Learning Algorithms for Predicting Breslow Thickness from Dermoscopic Images of Acral Lentiginous Melanomas.</span><br />Chu YS*, Lee S*, Lee SG, et al. <span class="venue">Journal of Investigative Dermatology</span>, 2022.</li>
-        </ol>
-
-        <h3>2020</h3>
-        <ol class="pubs">
-          <li><span class="pub-title">Augmented decision-making for acral lentiginous melanoma detection using deep convolutional neural networks.</span><br />Lee S, Chu YS, Yoo SK, et al. <span class="venue">Journal of the European Academy of Dermatology and Venereology</span>, 2020.</li>
-          <li><span class="pub-title">Artificial Intelligence in Cutaneous Oncology.</span><br />Chu YS, An HG, Oh BH, Yang S. <span class="venue">Frontiers in Medicine</span>, 2020.</li>
+          <li><span class="pub-title">Identifying Gender-Specific Visual Bias Signals in Skin Lesion Classification.</span><br />Heejae Lee, Sejung Yang, Yusung Chu†, and Byungho Oh†. <span class="venue">MICCAI Workshops</span>, 2025. <span class="meta">Corresponding author; Best Poster Presentation Award.</span></li>
+          <li><span class="pub-title">Evaluating the Trustworthiness of Foundation Models for Skin Lesion Segmentation.</span><br />Yusung Chu, Byungho Oh, and Sejung Yang. <span class="venue">ICCV Workshops</span>, 2025.</li>
         </ol>
       </section>
 
-      <section id="cv">
-        <h2>CV</h2>
-        <h3>Education</h3>
-        <ul class="cv-list">
-          <li>Ph.D., Biomedical Engineering, Yonsei University, Korea, 2019–2024</li>
-          <li>B.S., Biomedical Engineering, Yonsei University, Korea, 2014–2020</li>
-        </ul>
-
-        <h3>Professional Experience</h3>
-        <ul class="cv-list">
-          <li>Postdoctoral Researcher, Precision Medicine, Yonsei University Wonju College of Medicine, Korea, 2024–Present</li>
-        </ul>
-
-        <h3>Patents & Awards</h3>
-        <ul class="cv-list">
-          <li>Yonsei University Graduate School Best Academic Paper Award, 2024</li>
-          <li>Korea Society of Digital Health Grand Award, 2023</li>
-          <li>Registered patents related to melanoma diagnosis and atomic image analysis</li>
-        </ul>
-
-        <div class="note">Tip: replace <code>profile.jpg</code> with your real profile image, then upload this file as <code>index.html</code> to a GitHub repository named <code>your-github-id.github.io</code>.</div>
+      <section id="profile">
+        <h2>Academic Profile</h2>
+        <div class="grid-two">
+          <div class="card">
+            <h3>Education</h3>
+            <ul class="list">
+              <li>Ph.D., Biomedical Engineering, Yonsei University, Korea, 2019–2024</li>
+              <li>B.S., Biomedical Engineering, Yonsei University, Korea, 2014–2020</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Positions</h3>
+            <ul class="list">
+              <li>Postdoctoral Researcher, Precision Medicine, Yonsei University Wonju College of Medicine, 2024–Present</li>
+              <li>Visiting Scholar, Department of Psychiatry, University of North Carolina at Chapel Hill School of Medicine, 2026</li>
+            </ul>
+          </div>
+        </div>
       </section>
+
+      <section id="grants">
+        <h2>Grants & Fellowships</h2>
+        <ul class="list">
+          <li><strong>Postdoctoral Research Fellowship, National Research Foundation of Korea (NRF).</strong> Principal Investigator: Yusung Chu. Sep. 2025 – Aug. 2026. Approx. USD 44,500.</li>
+          <li><strong>Postdoctoral Researcher Support Program, Yonsei University Wonju College of Medicine.</strong> Mar. 2025 – Aug. 2025. Approx. USD 5,200.</li>
+          <li><strong>Postdoctoral Researcher Support Program, Yonsei University Wonju College of Medicine.</strong> Sep. 2024 – Feb. 2025. Approx. USD 5,200.</li>
+        </ul>
+      </section>
+
+      <section id="honors">
+        <h2>Honors & Awards</h2>
+        <ul class="list">
+          <li>Best Poster Presentation Award, MICCAI Workshops, 2025. <span class="meta">Corresponding author.</span></li>
+          <li>Yonsei University Graduate School Best Academic Paper Award, 2024. <span class="meta">First author.</span></li>
+          <li>Yonsei Medical Journal Best Paper Award for the Best Published Manuscript in 2022–2023. <span class="meta">First author.</span></li>
+          <li>Grand Award, Korea Society of Digital Health, 2023. <span class="meta">First author.</span></li>
+        </ul>
+      </section>
+
+      <section id="patents">
+        <h2>Patents</h2>
+        <ol class="pubs">
+          <li><span class="pub-title">METHOD FOR ANALYZING ATOMIC IMAGES OF LOW DIMENSIONAL MATERIALS.</span><br /><span class="meta">Korea Patent Registration No. 1022532270000, registered May 12, 2021.</span></li>
+          <li><span class="pub-title">Method, Device and Program for Diagnosis of Melanoma Using Deep Learning.</span><br /><span class="meta">Korea Patent Registration No. 1022972420000, registered Aug. 27, 2021.</span></li>
+          <li><span class="pub-title">딥러닝을 이용한 흑색종 진단 방법, 장치 및 프로그램.</span><br /><span class="meta">Korea Patent Registration No. 10-2376717, registered Mar. 16, 2022.</span></li>
+        </ol>
+      </section>
+
+      <div class="note">For privacy, this public webpage intentionally omits your personal phone number and home/office address. Upload your profile image as <code>profile.jpg</code> and, if desired, upload a PDF version of your CV as <code>CV_Yusung_Chu.pdf</code>.</div>
     </section>
   </main>
 
   <footer>
-    © 2026 Yusung Chu. Powered by GitHub Pages.
-  </footer>
-</body>
-</html>
+    © 2026 Yusung Chu
