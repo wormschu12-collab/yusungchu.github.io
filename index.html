@@ -196,6 +196,7 @@
     .card h3 {
       margin-top: 0;
     }
+    
 
     .note {
       background: #fff7ed;
@@ -206,6 +207,57 @@
       color: #7c2d12;
       font-size: 0.94rem;
     }
+    .featured-pub {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 28px;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+  }
+  
+  .featured-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  }
+  
+  .featured-info {
+  min-width: 0;
+  }
+  
+  .featured-info .pub-title {
+  display: block;
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.45;
+  margin-bottom: 8px;
+  }
+  
+  .featured-authors {
+  margin-bottom: 5px;
+  line-height: 1.55;
+  }
+  
+  .featured-venue {
+  line-height: 1.55;
+  }
+  
+  @media (max-width: 700px) {
+  .featured-pub {
+  grid-template-columns: 1fr;
+  gap: 16px;
+  }
+  
+  .featured-image {
+  max-width: 500px;
+  }
+  }
+
 
     footer {
       max-width: var(--max-width);
@@ -339,6 +391,41 @@
           <li><strong>2025.5</strong> Paper on robust melanoma prediction published in <strong>IEEE Journal of Biomedical and Health Informatics</strong>.</li>
         </ul>
       </section>
+
+      <section id="featured-publications">
+    <h2>Featured Publications</h2>
+  
+    <div class="featured-pub">
+  
+  ```
+  <img
+    class="featured-image"
+    src="Highlight_5.png"
+    alt="VL-RewardGen overview"
+  />
+  
+  <div class="featured-info">
+  
+    <span class="pub-title">
+      VL-RewardGen: Vision–Language Reward Driven Skin Lesion Image Generation.
+    </span>
+  
+    <div class="featured-authors">
+      <strong>Yusung Chu</strong> and Sejung Yang.
+    </div>
+  
+    <div class="featured-venue">
+      <span class="venue">
+        MICCAI 2026. (정보과학회 S급 최우수국제학술대회) 
+    </div>
+  
+  </div>
+  ```
+  
+    </div>
+  
+  </section>
+
 
       <section id="publications">
   <h2>Publications (International journals & conferences)</h2>
